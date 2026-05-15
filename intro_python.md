@@ -6,9 +6,9 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.3'
-      jupytext_version: 1.12.0
+      jupytext_version: 1.10.3
   kernelspec:
-    display_name: Python 3 (ipykernel)
+    display_name: Python 3
     language: python
     name: python3
 ---
@@ -67,10 +67,6 @@ Python can do simple mathematical operations just like a calculator. Try executi
 # Add a cell below this one to do your calculation
 ```
 
-```python
-1345000 + 895000
-```
-
 ## Variables and Objects
 
 
@@ -105,15 +101,15 @@ So far we have been doing all of our operations on numbers, integers and floats 
 Strings allow us to store and operate on text data. Strings in Python are surrounded by either single quotes '' or double quotes "".
 
 ```python
-ourstring = 'Here is a "string" in Python!'
+ourstring = "Here is a string in Python!"
 ourstring
 ```
 
 > Try uncommenting the next cell and making a string of your own.
 
 ```python
-mystring = '<put your string here>'
-mystring
+#mystring = <put your string here>
+#mystring
 ```
 
 If we later want to see the value stored in a variable we can always use the built in **print** function. **Print** is recognized as a keyword by our notebook and so the color changes to make our lives as programmers easier.
@@ -127,7 +123,7 @@ What if we want to have multiple strings stored at once but we don't want to ass
 Lists are enclosed by brackets [] and separated by commas.
 
 ```python
-ourlist = ['This', 'is', "a", "list", 'of', "strings",1,1.0,True]
+ourlist = ['This', 'is', "a", "list", 'of', "strings"]
 ```
 
 ```python
@@ -211,7 +207,7 @@ Here are the word counts for the *Lord of the Rings* books ([citation](http://lo
 
 ```
 
-```python
+<!-- #raw -->
 # Example Solution
 
 tolkien = {"The Silmarillion":130115,"The Hobbit":95506,"The Fellowship of the Ring":187726, "The Two Towers":156147, "The Return of the King":137037}
@@ -228,7 +224,7 @@ print("Total Words for the Lord of the Rings Trilogy")
 
 print(tolkien["The Fellowship of the Ring"]+tolkien["The Two Towers"]+tolkien["The Return of the King"])
 
-```
+<!-- #endraw -->
 
 ## Loops and Functions
 
@@ -251,9 +247,9 @@ for i in [0,1,2]:
 
 *__Note__: The indention is important, it tells Python that the line *print(i)* belongs inside the loop.*
 
-<!-- #region tags=[] -->
+
 ### Functions
-<!-- #endregion -->
+
 
 Sometimes it would be nice to be able to save a group of instructions in a single block, that way we won't need to rewrite several lines of code each time we want to do that set of operations.
 
@@ -272,7 +268,7 @@ def square_me(n):
 ```
 
 ```python
-square_me(40975)
+square_me(4)
 ```
 
 >**Think**: What is something that you do over and over again?
@@ -282,21 +278,19 @@ square_me(40975)
 >Try to build your own loop that prints the individual letters in a string. *Hint: Python is clever enough to do this without making a list first*
 
 ```python
-for i in "test":
-    print(i)
+# for
 ```
 
 >Try defining your own function that takes 2 arguments and adds them together.
 
 ```python
-def add_me(n,m):
-    return n+m
-
-
+#def add_me
+#
+#
 ```
 
 ```python
-add_me(7,11)
+#add_me(7,11)
 ```
 
 Putting loops and functions together is where python can become very powerful.
@@ -315,22 +309,11 @@ def print_numbers(start,stop):
 ```
 
 ```python
-print_numbers(0,7)
+print_numbers(0,4)
 ```
 
 >Define a function that uses a loop to add the squares of the numbers 0 to n. (e.g. with n = 3, return 0+1+4+9 = 14)
 
-```python
-def add_sq(n):
-    tot = 0
-    for i in range(0,n+1):
-        tot=tot+square_me(i)
-    return tot
-```
-
-```python
-add_sq(3)
-```
 
 # Libraries
 
@@ -400,14 +383,6 @@ total
 
 > Use slicing to determine how much longer is the "Lord of the Rings" Trilogy than the other two books combined?
 
-```python
-tri = sum(df["Words"][2:])
-other = sum(df["Words"][:2])
-```
-
-```python
-tri-other
-```
 
 ## More Complex Data
 
@@ -525,10 +500,6 @@ Where the variable represents the value in each row and the opertaion of functio
 ```python
 titles = ['The Hobbit','The Fellowship of the Ring', 'The Two Towers', 'The Return of the King']
 data['CollectionName']=data['CollectionNum'].apply(lambda x: titles[x])
-```
-
-```python
-data
 ```
 
 > Can you use apply to estimate the time it takes to read each chapter? How long would it take to read all the chapters? Assume someone reads at 225 words per minute.
